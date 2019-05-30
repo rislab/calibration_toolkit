@@ -48,7 +48,7 @@ namespace calibration
 
     return ray;
   }
-
+*/
 template <typename Scalar>
   typename Types<Scalar>::Point2 PinholeCameraModel::project3dToPixel(const typename Types<Scalar>::Point3 & world_point) const
   {
@@ -61,7 +61,7 @@ template <typename Scalar>
 
     return uv_rect;
   }
-
+/*
 template <typename Scalar>
   void PinholeCameraModel::projectPixelTo3dRay(const typename Types<Scalar>::Cloud2 & pixel_points,
                                                typename Types<Scalar>::Cloud3 & world_points) const
@@ -84,7 +84,7 @@ template <typename Scalar>
     projectPixelTo3dRay<Scalar>(pixel_points, world_points);
     return world_points;
   }
-
+*/
 template <typename Scalar>
   void PinholeCameraModel::project3dToPixel(const typename Types<Scalar>::Cloud3 & world_points,
                                             typename Types<Scalar>::Cloud2 & pixel_points) const
@@ -110,7 +110,7 @@ template <typename Scalar>
     typename Types<Scalar>::Cloud2 pixel_points(world_points.size());
     project3dToPixel<Scalar>(world_points, pixel_points);
     return pixel_points;
-  }*/
+  }
 
 template <typename Scalar>
   inline typename Types<Scalar>::Cloud2 PinholeCameraModel::project3dToPixel2(const typename Types<Scalar>::Cloud3 & world_points) const

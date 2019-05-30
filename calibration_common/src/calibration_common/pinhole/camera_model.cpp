@@ -46,7 +46,7 @@ namespace calibration
 
   return ray;
 }
-
+*/
 Point2 PinholeCameraModel::project3dToPixel(const Point3 & world_point) const
 {
   //cv::Point2d cv_point = Base::project3dToPixel(cv::Point3d(world_point[0], world_point[1], world_point[2]));
@@ -61,7 +61,7 @@ Point2 PinholeCameraModel::project3dToPixel(const Point3 & world_point) const
 
   return uv_rect;
 }
-
+/*
 void PinholeCameraModel::projectPixelTo3dRay(const Cloud2 & pixel_points,
                                              Cloud3 & world_points) const
 {
@@ -83,7 +83,7 @@ Cloud3 PinholeCameraModel::projectPixelTo3dRay(const Cloud2 & pixel_points) cons
   projectPixelTo3dRay(pixel_points, world_points);
   return world_points;
 }
-
+*/
 void PinholeCameraModel::project3dToPixel(const Cloud3 & world_points,
                                           Cloud2 & pixel_points) const
 {
@@ -101,7 +101,7 @@ void PinholeCameraModel::project3dToPixel(const Cloud3 & world_points,
   pixel_points.container().array().rowwise() /= world_points.container().array().bottomRows<1>();
   pixel_points.container().colwise() += sum_final;
 
-}*/
+}
 
 void PinholeCameraModel::project3dToPixel2(const Cloud3 & world_points,
                                            Cloud2 & pixel_points) const
@@ -109,12 +109,12 @@ void PinholeCameraModel::project3dToPixel2(const Cloud3 & world_points,
   project3dToPixel2<double>(world_points, pixel_points);
 }
 
-/*Cloud2 PinholeCameraModel::project3dToPixel(const Cloud3 & world_points) const
+Cloud2 PinholeCameraModel::project3dToPixel(const Cloud3 & world_points) const
 {
   Cloud2 pixel_points(world_points.size());
   project3dToPixel(world_points, pixel_points);
   return pixel_points;
-}*/
+}
 
 Cloud2 PinholeCameraModel::project3dToPixel2(const Cloud3 & world_points) const
 {

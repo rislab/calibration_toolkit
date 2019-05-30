@@ -72,7 +72,7 @@ template <typename ScalarT_>
      * @param world_point
      * @return
      */
-    //virtual Point2 project3dToPixel(const Point3 & world_point) const = 0;
+    virtual Point2 project3dToPixel(const Point3 & world_point) const = 0;
 
     /**
      * @brief projectPixelTo3dRay
